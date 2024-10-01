@@ -8,6 +8,7 @@
 #include <iostream>
 #include "function.hpp"
 #include <fstream>
+#include <string>
 using namespace std;
 class Password
 {
@@ -21,44 +22,79 @@ public:
         fstream log;
         fstream pass;
 
-        log.open(login, fstream::in | fstream::out | fstream::app);
-        pass.open(password, fstream::in | fstream::out | fstream::app);
+        log.open(login, fstream::in | fstream::app); // fstream::out |
+        pass.open(password, fstream::in | fstream::app); // | fstream::out
 
-        if (!log.is_open() && !pass.is_open())
+        if (!log.is_open() || !pass.is_open())
         {
             cout << "Ошибка!" << endl;
         }
         else
         {
-            string log_cheker;
-            string pass_cheker;
-
-            while (!log.eof()) //Пока не закончатся символы, идем по циклу.
-            {
-                log_cheker = "";
-                log >> log_cheker; //Передаем данные с файла в переменную.
-            }
-            while (!pass.eof()) //Пока не закончатся символы, идем по циклу.
-            {
-                pass_cheker = "";
-                pass >> pass_cheker; //Передаем данные с файла в переменную.
-            }
-
             string login_correct;
             string pass_correct;
-
             cout << "Введите свой логин: "; cin >> login_correct;
             cout << endl;
             cout << "Введите свой пароль: "; cin >> pass_correct;
-
+            
+            
+            string log_cheker;
+            string pass_cheker;
+            
+            bool login_found = false;
+            bool password_found = false;
+            
+        /*
+            while (!log.eof()) //Пока не закончатся символы, идем по циклу.
+            {
+                std::getline(log, log_cheker);
+                // log >> log_cheker; //Передаем данные с файла в переменную.
+            }
+            while (!pass.eof()) //Пока не закончатся символы, идем по циклу.
+            {
+                std::getline(pass, pass_cheker);
+                // pass >> pass_cheker; //Передаем данные с файла в переменную.
+            }
+        */
+            
+        /*
             if (login_correct != log_cheker && pass_correct != pass_cheker)
             {
-                cout << "Пароль или логин введен не правильно!" << endl;
+                std::cout << "Пароль или логин введен не правильно!" << std::endl;
             }
             else
             {
-                cout << "Данные введены верно!" << endl;
+                std::cout << "Данные введены верно!" << std::endl;
             }
+        */
+            
+            while (getline(log, log_cheker) && getline(pass, pass_cheker)) {
+                
+                std::cout << log_cheker << std::endl;
+                
+                if (login_correct == log_cheker) {
+                    login_found = true;
+                }
+                if(pass_correct == pass_cheker){
+                        password_found = true;
+                }
+                if(password_found == login_found){
+                    break;
+                }
+            }
+            
+            if(!login_found){
+                std::cout << "login uncorrect" << std::endl;
+                std::cout << log_cheker << " " << login_correct;
+            }else if(!password_found){
+                std::cout << "password uncorrect" << std::endl;
+            }else{
+                std::cout << "Welcome " << login_correct << std::endl;
+            }
+            
+            log.close();
+            pass.close();
+
             
         }
     }
@@ -93,6 +129,8 @@ public:
             
 
         }
+        log.close();
+        pass.close();
     }
 
 };
@@ -129,7 +167,7 @@ public:
 };
 int main()
 {
-
+    
     menu Menu;
 
     Menu.RunMenu();
