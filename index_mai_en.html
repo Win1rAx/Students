@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinVideo</title>
+    <link href="./style.css" rel="stylesheet" />
+    <!-- <link href="./menu.html" rel="menu" /> -->
+</head>
+<body>
+    <div class="loader"></div>
+    <script>
+        // Загрузка меню с помощью JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('./menu_en.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                    // Подключение обработчика событий для меню, если необходимо
+                    var menuToggle = document.getElementById('menu-toggle');
+                    var mobileNav = document.querySelector('.mobile-nav');
+
+                    menuToggle.addEventListener('change', function () {
+                        if (menuToggle.checked) {
+                            mobileNav.style.display = 'block';
+                        } else {
+                            mobileNav.style.display = 'none';
+                        }
+                    });
+                })
+                .catch(error => console.error('Ошибка загрузки меню:', error));
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loader');
+            loader.classList.add('hidden');
+        });
+
+
+    </script>
+     <style>
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(720deg);
+            }
+        }
+
+    </style>
+    <main>
+       
+             <div class="content_big_film">
+            
+                <div class="sneakers_big_film">
+                    <div class="sneaker_big_profile">
+                        <div class="film_1">
+                            <div class="container2288">
+                                <div class="slide8"><img src="./images/Постер_Майор_Гром_Игра.jpg" class="sneaker-image_big"></div>
+                                <div class="slide8"><img src="./images/Постер_Майор_Гром_Игра.jpg" class="sneaker-image_big"></div>
+                                <div class="slide8"><img src="./images/Постер_Майор_Гром_Игра.jpg" class="sneaker-image_big"></div>
+                                
+                            </div>
+                        </div>
+                       <div class="film_2">
+                            <p class="P_info_big">MAJOR THUNDER: game<br /> __</p>
+                            <h3 class="H3_big">About the film</h3>
+                            <p class="P_litle_info_big">Year of production: 2024<br />
+                                Country: Russia<br />
+                                Genre: action, adventure<br />
+                                Director: Oleg Trofim<br />
+                                Operator: Maxim Zhukov<br />
+                                Composer: Roman Seliverstov<br />
+                                Artist: Dmitry Onishchenko, Anna Kudevich<br />
+                                Mounting: Dmitry Korabelnikov<br />
+                                Fees in Russia: $16,537<br />
+                                Premiere in Russia: May 23, 2024, Central Partnership<br />
+                                Age: 16+<br />
+                                Time: 168 min.<br /> __
+                            </p>
+                            <h3 class="H3_big">Plot</h3>
+                            <p class="P_litle_info_big">Police Major Igor Grom is known throughout St. Petersburg for his punchy character and uncompromising attitude towards criminals of all stripes. Incredible strength, analytical mindset and integrity — all this makes Major Thunder a real superhero. His life is perfect: during the day he catches criminals with his partner Dima Dubin, and spends the evenings in the company of journalist Yulia Pchelkina. The complete idyll is interrupted by the appearance in the city of a mysterious villain calling himself a Ghost. He offers Thunder to play a dangerous game, the stake in which is the lives of ordinary people.</p>
+                        </div>
+                       
+                    </div>
+                    <div class="sneakers">
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Майор Гром- Игра | Тизерный трейлер | В кино с 23 мая 2024.mp4"  type="video/mp4">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                            
+                        </div>
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Майор Гром- Игра | Финальный трейлер | В кино с 23 мая.mp4"  type="video/mp4">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                        </div>
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Майор Гром- Игра | Трейлер | В кино с 23 мая.webm"  type="video/webm">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <footer>
+            <div class="footer-content">
+                <a class="footer__logo-link" href="index.html">
+                    <h1 class="foot">WinVideo</h1>
+                </a>
+                <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="https://t.me/ShadowOnTheWeb_bot" class="nav-link">TG Support ✍️</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="copyright">
+                <p class="copyright-text">WINVIDEO ®2024</p>
+            </div>
+        </footer>
+    </main> 
+    <script src="./script.js"></script>
+</body>
+</html>

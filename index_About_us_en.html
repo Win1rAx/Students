@@ -12,7 +12,7 @@
     <script>
         // Загрузка меню с помощью JavaScript
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('./menu.html')
+            fetch('./menu_en.html')
                 .then(response => response.text())
                 .then(data => {
                     document.querySelector('body').insertAdjacentHTML('afterbegin', data);
@@ -39,19 +39,33 @@
 
 
     </script>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideInterval = 3000;
+        
+        function changeSlide() {
+        slides[currentIndex].style.opacity = 0;
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].style.opacity = 1;
+        }
+        
+        setInterval(changeSlide, slideInterval);
+    </script>
      <style>
         
-        .sneaker_big_profile_Main{
+        .sneaker_big_map{
             display: flex;
-            max-width: 1140px;
-            width: 97%;
+            
+            width: 100%;
             height: 100%;
             border-radius: 25px;
-            background: rgba(0, 0, 0, 0.863);
-            padding: 3px;
+            background: rgb(0, 0, 0);
+            padding: 25px;
             flex-wrap: nowrap;
             flex-direction: column;
             justify-content: space-evenly;
+            align-items: center;
 
         }
         .sneaker-info_profile {
@@ -154,17 +168,22 @@
             flex-direction: column;
             align-items: flex-start;
         }
-        .sneakers_film_main {
+        .sneakers_film_m{
             display: flex;
+            width: 100%;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        .content_film_main {
-            width: 100%;
-            margin: 25px ;
-            /*max-width: 1140px;*/
+        .content_film_map {
+            display: flex;
+            width: 90%;
+            margin: 25px;
+            /* max-width: 1140px; */
             min-height: 586px;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
         }
         .loader {
             position: fixed;
@@ -209,43 +228,79 @@
             color: rgb(0, 255, 234);
             font-family: Anonimys Pro;
         }
-        .NEwFil{
-            margin: 30px;
+        .Kino{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
         }
-        @media screen and (max-width: 812px) {
+        .kino_foto{
+           
+            border-radius: 25px;
+            width: 70%;
+            height: 70%;
+        }
+
+        .container228 {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* для плавной прокрутки на мобильных устройствах */
+            margin: 25px;
+        }
+        .slide {
+            flex: none;
+            scroll-snap-align: start;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+
+        }
+        .mapp{
+            position:relative;
+            overflow:hidden;
+            border-radius: 25px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 812px) {
+
             .P_info{
             color: azure;
             
             font-size: 24px;
             font-family: Anonimys Pro;
-        }
+            }
             .P_litle_info{
                 color: azure;
                 font-size: 12px;
-                
-            }
-            .P_Prem{
-                font-size: 25px;
-                color: rgb(0, 255, 234);
                 font-family: Anonimys Pro;
             }
-            h3{
-                font-size: 12px;
+            .P_Prem{
+                font-size: 50px;
+                color: rgb(0, 255, 234);
+                font-family: Anonimys Pro;
             }
             .sneaker-info{
                 padding: 16px 12px;
             }
-            .sneaker_big_profile_Main {
+            .sneaker_big_map {
                 width: 96%;
             }
             .sneakers {
                 margin: 12px 4px 12px 4px;
             }
-        }
+            .mapp{
+                width: 100%;
+                height: 100%;
+            }
 
-        @media (min-width: 992px) {
-            
-            
+
+
+
 
         }
 
@@ -261,103 +316,48 @@
 
 
     </style>
-    
-    <style>
-      
-    </style>
     <main>
        
-        <div class="content_film_main">
+        <div class="content_film_map">
             
             
-            <div class="sneakers_film_main">
-                    <div class="sneaker_big_profile_Main">
-                        <div class="prof_1">
-                                <video class="film_img_b" controls autoplay loop>
-                                    <source src="./images/Eva - Home Offline -  - 2024-05-15 13-01-31.mp4"  type="video/mp4">
-                                   <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
-                                </video>
-                        </div>
-                       <div class="prof_2">
-                        <p class="P_Prem">ПРЕМЬЕРА ГОДА</p>
-                        <p class="P_info"> <a href="index_offline.html" class="link">Оффлайн</a><br /> __</p>
-                        <p class="P_litle_info">BeHappy — секретное невидимое приложение, которое служит для покупки наркотиков через смартфон. Его пользователи сталкиваются с серьезным противником, который прячется под именем Анонимус. Он сообщает им, что сумел раскрыть данные всех, кто когда-либо пользовался этим приложением и теперь он дает им выбор — пойти в полицию и во всем признаться или сыграть в игру со смертью. Что будет, если в этой игре проиграть, становится ясно, когда пользователи BeHappy получают фото кладмена с перерезанным горлом.</p>
-                       </div>
-                    </div>
-            </div>
-            <div class="NEwFil">
-                <h1 class="P_info" style="color: rgb(0, 255, 234);">НОВИНКИ ГОДА</h1>
-            </div>
-            <div class="sneakers">
-                <a href="index_mai.html" class="link">
-                        <div class="sneaker">
-                            <img alt="New Balance 574 YURT" src="./images/Постер_Майор_Гром_Игра.jpg" class="sneaker-image">
-                            <div class="sneaker-info">
-                                <h3>МАЙОР ГРОМ ИГРА</h3>
-                                
-                            </div>
-                        </div>
-                        
-                    </a>
-                        <a href="index_min.html" class="link">
-                            <div class="sneaker">
-                                
-                                <img alt="Nike Dunk Low SP" src="./images/Министерство_неджентельменских_дел.jpeg" class="sneaker-image">
-                            
-                                <div class="sneaker-info">
-                                    <h3>МИНИСТЕРСТВО </h3>
-                                    <h3>НЕДЖЕНТЕЛЬМЕНСКИХ</h3>
-                                    <h3>ДЕЛ</h3>
-                                    
-                                </div>
-                            </div>
-                        </a>
-                
-                  <a href="index_Super.html" class="link">
-                    <div class="sneaker">
-                        <img alt="Converse Chuck 70 High" src="./images/Supernatural.jpg" class="sneaker-image">
-                        <div class="sneaker-info">
-                            <h3>СВЕРХЕСТЕСТВЕННОЕ</h3>
-                            
-                        </div>
-                    </div>
-                </a>
-                <a href="index_jon.html" class="link">
-                    <div class="sneaker">
-                        <img alt="adidas Yeezy Foam RNNR" src="./images/jon.jpg" class="sneaker-image">
-                        <div class="sneaker-info">
-                            <h3>ДЖОН УИК 4</h3>
-                            
-                        </div>
-                    </div>
-                </a>
-                    
+            <div class="sneakers_film_m">
+                    <div class="sneaker_big_map">
 
-                
-                
-                <a href="index_man.html" class="link">
-                    <div class="sneaker">
-                        <img alt="New Balance 574 YURT" src="./images/man.jpg" class="sneaker-image">
-                        <div class="sneaker-info">
-                            <h3>ГНЕВ ЧЕЛОВЕЧЕСКИЙ</h3>
-                            
+                        <div class="Kino">
+                            <h3 class="P_info">
+                                About us
+                            </h3>
+                            <p class="P_litle_info">In a small town on the outskirts of Moscow, there lived a young man named Alexey Maslov. He was a passionate film lover and dreamed of creating his own cinema where the audience could enjoy watching movies in a cozy and comfortable environment.After much thought and discussion with friends and family, Alexey decided to make his dream come true. He started looking for a suitable location for his cinema and soon found an old abandoned cinema on the outskirts of the city.Alexey renovated the building, updated the interior and equipped the cinema with modern technology. He named his new cinema WinVideo in honor of his passion for cinema and love of winning.WinVideo quickly became a popular destination among the residents of the city. Film festivals, film screenings and various events were held here. Alexey Maslov became known as a talented businessman and organizer of cultural events.Over time, WinVideo turned into a real cultural center of the city. Not only film screenings were held here, but also exhibitions, concerts
+                                </p>
+                            <div class="container228">
+                                <div class="slide"><img src="./images/WinVideo.webp" class="kino_foto"></div>
+                                <div class="slide"><img src="./images/ WinVideoin.webp" class="kino_foto"></div>
+                                <div class="slide"><img src="./images/food.webp" class="kino_foto"></div>
+                            </div>
+                            <h3 class="P_info">
+                                Contacts
+                            </h3>
+                            <p class="P_litle_info">
+                                VK:<a href="https://vk.com/wintrax"><p>WinVideo Vk_official</p></a><br />
+                            </p>
+                            <p class="P_litle_info">
+                                Tg:<a href="https://vk.com/wintrax"><p>WinVideo Tg_official</p></a><br />
+                            </p>
+                            <p class="P_litle_info">
+                                Number:<a href="https://vk.com/wintrax"><p>8(800)555-35-35</p></a><br />
+                            </p>
+
+                        </div>
+                        <div class="mapp">
+                            <a href="https://yandex.ru/maps/org/kazanmall/199651664318/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">KazanMall</a>
+                            <a href="https://yandex.ru/maps/43/kazan/category/shopping_mall/184108083/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px; ">Торговый центр в Казани</a>
+                            <a href="https://yandex.ru/maps/43/kazan/category/entertainment_center/184106372/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Развлекательный центр в Казани</a>
+                            <iframe src="https://yandex.ru/map-widget/v1/?ll=49.150737%2C55.773206&mode=poi&poi%5Bpoint%5D=49.148097%2C55.768645&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D199651664318&z=15.03" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative; border-radius: 25px;">
+                            </iframe>
                         </div>
                     </div>
-                    
-                </a>
-                <a href="index_trans.html" class="link">
-                    <div class="sneaker">
-                        <img alt="New Balance 574 YURT" src="./images/Trans.webp" class="sneaker-image">
-                        <div class="sneaker-info">
-                            <h3>ПЕРЕВОДЧИК</h3>
-                            
-                        </div>
-                    </div>
-                    
-                </a>
-                
-            </div> 
-            
+            </div>
         </div>
 
         <footer>

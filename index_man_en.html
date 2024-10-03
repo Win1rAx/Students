@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinVideo</title>
+    <link href="./style.css" rel="stylesheet" />
+    <!-- <link href="./menu.html" rel="menu" /> -->
+</head>
+<body>
+    <div class="loader"></div>
+    <script>
+        // Загрузка меню с помощью JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('./menu_en.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                    // Подключение обработчика событий для меню, если необходимо
+                    var menuToggle = document.getElementById('menu-toggle');
+                    var mobileNav = document.querySelector('.mobile-nav');
+
+                    menuToggle.addEventListener('change', function () {
+                        if (menuToggle.checked) {
+                            mobileNav.style.display = 'block';
+                        } else {
+                            mobileNav.style.display = 'none';
+                        }
+                    });
+                })
+                .catch(error => console.error('Ошибка загрузки меню:', error));
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loader');
+            loader.classList.add('hidden');
+        });
+
+
+    </script>
+     <style>
+        
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(720deg);
+            }
+        }
+
+
+
+    </style>
+    <main>
+       
+             <div class="content_big_film">
+            
+                <div class="sneakers_big_film">
+                    <div class="sneaker_big_profile">
+                        <div class="film_1">
+                            <div class="container2288">
+                                <div class="slide8"><img src="./images/man.jpg" class="sneaker-image_big"></div>
+                                <div class="slide8"><img src="./images/man.jpg" class="sneaker-image_big"></div>
+                                <div class="slide8"><img src="./images/man.jpg" class="sneaker-image_big"></div>
+                                
+                            </div>
+                        </div>
+                       <div class="film_2">
+                            <p class="P_info_big">HUMAN ANGER<br />__
+                            </p>
+                            <h3 class="H3_big">About the film</h3>
+                            <p class="P_litle_info_big">Year of production:
+                                2021<br />
+                                 Country:
+                                United Kingdom, USA<br />
+                                 Genre:
+                                action, thriller<br />
+                                 Director:
+                                 Guy Ritchie<br />
+                                 The script:
+                                 Guy Ritchie<br />
+                                 Producer:
+                                Bill Block<br />
+                                 Operator:
+                                Alan Stewart<br />
+                                 Budget:
+                                $40,000,000<br />
+                                 Fees in the USA:
+                                 $27 466 489<br />
+                                 Fees in the world:
+                                 + $76 500 000 = $103 966 489<br />
+                                 Age:
+                                18+<br />
+                                 Time:
+                                 119 min.<br />__
+                            </p>
+                            <h3 class="H3_big">Plot</h3>
+                            <p class="P_litle_info_big">Trucks of the Los Angeles-based Fortico Security collection company are often attacked, and during another robbery, both guards are killed. After a while, a strong, laconic Briton, Patrick Hill, gets a job in the company. He gets the nickname H. from the boss and, having passed fitness, shooting and driving tests close to the required minimum, goes on his first assignment. Soon, armed robbers try to rob his truck, but H. single-handedly deals with the whole gang and becomes a hero. It seems that he is not interested in the fame and respect of his colleagues at all, because he pursues his goals. </p>
+                        </div>
+                    </div>
+                    <div class="sneakers">
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/ГНЕВ ЧЕЛОВЕЧЕСКИЙ | Трейлер №2 (18+) | Уже в кинотеатрах.mp4"  type="video/mp4">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                            
+                        </div>
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Гнев человеческий — Русский трейлер (2021) -  - 2024-05-26 00-25-59.mp4"  type="video/mp4">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                        </div>
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Гнев человеческий — Русский трейлер (2021).mp4"  type="video/mp4">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <footer>
+            <div class="footer-content">
+                <a class="footer__logo-link" href="index.html">
+                    <h1 class="foot">WinVideo</h1>
+                </a>
+                <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="https://t.me/ShadowOnTheWeb_bot" class="nav-link">TG Support ✍️</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="copyright">
+                <p class="copyright-text">WINVIDEO ®2024</p>
+            </div>
+        </footer>
+    </main> 
+    <script src="./script.js"></script>
+</body>
+</html>

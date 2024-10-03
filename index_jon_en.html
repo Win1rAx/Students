@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinVideo</title>
+    <link href="./style.css" rel="stylesheet" />
+    <!-- <link href="./menu.html" rel="menu" /> -->
+</head>
+<body>
+    <div class="loader"></div>
+    <script>
+        // Загрузка меню с помощью JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('./menu_en.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                    // Подключение обработчика событий для меню, если необходимо
+                    var menuToggle = document.getElementById('menu-toggle');
+                    var mobileNav = document.querySelector('.mobile-nav');
+
+                    menuToggle.addEventListener('change', function () {
+                        if (menuToggle.checked) {
+                            mobileNav.style.display = 'block';
+                        } else {
+                            mobileNav.style.display = 'none';
+                        }
+                    });
+                })
+                .catch(error => console.error('Ошибка загрузки меню:', error));
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loader');
+            loader.classList.add('hidden');
+        });
+
+
+    </script>
+     <style>
+        
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(720deg);
+            }
+        }
+
+
+
+    </style>
+    <main>
+       
+             <div class="content_big_film">
+            
+                <div class="sneakers_big_film">
+                    <div class="sneaker_big_profile">
+                        <div class="film_1">
+                            <div class="container2288">
+                                <div class="slide8"><img src="./images/jon.jpg" class="sneaker-image_big"></div>
+                                <div class="slide8"><img src="./images/jon.jpg" class="sneaker-image_big"></div>
+                                <div class="slide8"><img src="./images/jon.jpg" class="sneaker-image_big"></div>
+                                
+                            </div>
+                        </div>
+                       <div class="film_2">
+                            <p class="P_info_big">JOHN WICK 4<br />__
+                            </p>
+                            <h3 class="H3_big">About the film</h3>
+                            <p class="P_litle_info_big">Year of production:
+                                2023<br />
+                                 Country:
+                                USA, Germany<br />
+                                 Genre:
+                                action, thriller, crime<br />
+                                 Slogan:
+                                "Baba Yaga"<br />
+                                 Director:
+                                 Chad Stahelski<br />
+                                 Screenplay:
+                                Shay Hutten<br />
+                                 Producer:
+                                 Diala Al Raie<br />
+                                 Operator:
+                                 Dan Laustsen<br />
+                                 Budget:
+                                $90,000,000<br />
+                                 Fees in the USA:
+                                 $187 131 806<br />
+                                 Worldwide fees:
+                                +$253,025,439 = $4
+                                Age:
+18+<br />
+ Time:
+169 min.<br />__
+                            </p>
+                            <h3 class="H3_big">Plot</h3>
+                            <p class="P_litle_info_big">Leaving behind mountains of corpses, John Wick continues to hide from all kinds of assassins, and now the hunt for him is led by a young and ambitious Board member named Marquis. Two managers of the Continental hotels in New York and Osaka, who decided to help the wayward killer out of old friendship, have already paid cruelly for this, but suddenly John finds out a way to get out of this seemingly hopeless situation.
+                            </p>
+                        
+                        </div>
+                    </div>
+                    <div class="sneakers">
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Джон Уик 4 — Официальный русский трейлер (4К, Дубляж, 2023).webm"  type="video/webm">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                            
+                        </div>
+                        <div class="sneaker">
+                            <video class="film_img" controls loop>
+                                <source src="./images/Джон Уик 4 — Официальный русский трейлер (4К, Дубляж, 2023).webm"  type="video/webm">
+                            <!-- <source alt="MAP" src="./images/film.jpg" class="film_img" /> -->
+                            </video>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        
+
+        <footer>
+            <div class="footer-content">
+                <a class="footer__logo-link" href="index.html">
+                    <h1 class="foot">WinVideo</h1>
+                </a>
+                <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="https://t.me/ShadowOnTheWeb_bot" class="nav-link">TG Support ✍️</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="copyright">
+                <p class="copyright-text">WINVIDEO ®2024</p>
+            </div>
+        </footer>
+    </main> 
+    <script src="./script.js"></script>
+</body>
+</html>
