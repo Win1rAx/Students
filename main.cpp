@@ -4,7 +4,6 @@
 //
 //  Created by Алексей Маслов on 27.09.2024.
 //
-
 #include <iostream>
 #include "function.hpp"
 #include <fstream>
