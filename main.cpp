@@ -1,4 +1,4 @@
-//
+///
 //  main.cpp
 //  students
 //
@@ -19,13 +19,13 @@ public:
         string login = "logins.txt";
         string password = "passwords.txt";
 
-        fstream log;
-        fstream pass;
+        ifstream logins;
+        ifstream passwords;
 
-        log.open(login, fstream::in | fstream::app); // fstream::out |
-        pass.open(password, fstream::in | fstream::app); // | fstream::out
+        logins.open(login);
+        passwords.open(password);
 
-        if (!log.is_open() || !pass.is_open())
+        if (!logins.is_open() || !passwords.is_open())
         {
             cout << "Ошибка!" << endl;
         }
@@ -45,19 +45,17 @@ public:
             bool password_found = false;
             
         /*
-            while (!log.eof()) //Пока не закончатся символы, идем по циклу.
+            while (!logins.eof()) //Пока не закончатся символы, идем по циклу.
             {
-                std::getline(log, log_cheker);
+                std::getline(logins, log_cheker);
                 // log >> log_cheker; //Передаем данные с файла в переменную.
             }
-            while (!pass.eof()) //Пока не закончатся символы, идем по циклу.
+            while (!passwords.eof()) //Пока не закончатся символы, идем по циклу.
             {
-                std::getline(pass, pass_cheker);
+                std::getline(passwords, pass_cheker);
                 // pass >> pass_cheker; //Передаем данные с файла в переменную.
             }
-        */
-            
-        /*
+        
             if (login_correct != log_cheker && pass_correct != pass_cheker)
             {
                 std::cout << "Пароль или логин введен не правильно!" << std::endl;
@@ -66,34 +64,35 @@ public:
             {
                 std::cout << "Данные введены верно!" << std::endl;
             }
-        */
+            */
             
-            while (getline(log, log_cheker) && getline(pass, pass_cheker)) {
+            while (getline(logins, log_cheker)) {
                 
-                std::cout << log_cheker << std::endl;
+                //std::cout << log_cheker << std::endl;
                 
                 if (login_correct == log_cheker) {
                     login_found = true;
                 }
+            }
+            while (getline(passwords, pass_cheker)) {
                 if(pass_correct == pass_cheker){
-                        password_found = true;
+                    password_found = true;
                 }
                 if(password_found == login_found){
                     break;
                 }
-            }
             
+            }
             if(!login_found){
                 std::cout << "login uncorrect" << std::endl;
-                std::cout << log_cheker << " " << login_correct;
+                //std::cout << log_cheker << " " << login_correct;
             }else if(!password_found){
                 std::cout << "password uncorrect" << std::endl;
             }else{
                 std::cout << "Welcome " << login_correct << std::endl;
             }
-            
-            log.close();
-            pass.close();
+            logins.close();
+            passwords.close();
 
             
         }
@@ -121,8 +120,8 @@ public:
             cout << endl;
             cout << "Введите свой пароль: "; cin >> pass_cheker;
 
-            log << log_cheker;
-            pass << pass_cheker;
+            log << '\n' << log_cheker;
+            pass << '\n' << pass_cheker;
 
             cout << "Регистрация прошла успешно!" << endl;
 
